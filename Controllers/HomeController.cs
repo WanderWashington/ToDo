@@ -62,7 +62,7 @@ namespace ToDo.Controllers
             [FromServices] AppDbContext context)
         { 
             var model = context.Todos.FirstOrDefault(x=> x.Id == id);
-            if (model == null )
+            if (model == null)
                 return NotFound();
 
             context.Todos.Remove(model);
