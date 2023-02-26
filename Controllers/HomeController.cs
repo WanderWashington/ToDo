@@ -50,7 +50,6 @@ namespace ToDo.Controllers
 
             model.Title = todo.Title;
             model.Done = todo.Done;
-            
             context.Todos.Update(model);
             context.SaveChanges();
             return Ok(model);
@@ -64,9 +63,8 @@ namespace ToDo.Controllers
         { 
             var model = context.Todos.FirstOrDefault(x=> x.Id == id);
             if (model == null )
-                return NotFound();;
+                return NotFound();
 
-           
             context.Todos.Remove(model);
             context.SaveChanges();
             return Ok("Successfully deleted");
